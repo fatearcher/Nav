@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端导航</title>
+    <style type="text/css">
+      .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="btnBox">
+      <div class="btnBox_iconWarp">
+        <svg class="btnBox_icon" onclick="changePic()">
+          <use xlink:href="#icon-tuxiang"></use>
+        </svg>
+      </div>
+      <div class="btnBox_iconWarp">
+        <img
+          onclick="changeColor()"
+          class="btnBox_icon"
+          src="./img/sun.png"
+          alt=""
+        />
+      </div>
+      <!-- 变换图片 -->
+      <script type="text/javascript">
+        let i = 0;
+        let imgArr = [
+          "./img/1.jpg",
+          "./img/2.jpg",
+          "./img/3.jpg",
+          "./img/4.jpg",
+        ];
+
+        function changePic() {
+          if (++i === imgArr.length) {
+            i = 0;
+          }
+
+          document.body.style.backgroundImage = "url(" + imgArr[i] + ")";
+        }
+        // document.body.onclick = changePic
+      </script>
+      <!-- 变换颜色 -->
+      <script>
+        function changeColor() {
+          let path = document
+            .querySelectorAll(".btnBox_icon")[1]
+            .getAttribute("src");
+          let bgColor = document.querySelectorAll(
+            ".site,input,button,.addButton"
+          );
+
+          let textColor = document.querySelectorAll(
+            ".site,input,button,.addButton"
+          );
+
+          if (path == "./img/sun.png") {
+            document.querySelectorAll(".btnBox_icon")[1].src = "./img/moon.png";
+
+            for (let i = 0; i < bgColor.length; i++) {
+              bgColor[i].style.backgroundColor = "rgb(30, 30, 30, 0.3)";
+              textColor[i].style.color = "rgba(230, 230, 230,0.9)";
+            }
+          } else {
+            document.querySelectorAll(".btnBox_icon")[1].src = "./img/sun.png";
+
+            for (let i = 0; i < bgColor.length; i++) {
+              bgColor[i].style.backgroundColor = "rgb(255, 255, 255, 0.3)";
+              textColor[i].style.color = "rgba(10, 10, 10)";
+            }
+          }
+
+          // console.log(textColor);
+          // console.log(x);
+        }
+      </script>
+      <!-- 随机更换图片 -->
+      <!-- <script type="text/javascript">
+          function changePic() {
+            var bodyBgs = [];
+            bodyBgs[0] = "./img/1.jpg";
+            bodyBgs[1] = "./img/2.jpg";
+            bodyBgs[2] = "./img/3.jpg";
+            bodyBgs[3] = "./img/4.jpg";
+            var randomBgIndex = Math.round(Math.random() * 3);
+            document.body.style.backgroundImage =
+              "url(" + bodyBgs[randomBgIndex] + ")";
+
+            console.log(randomBgIndex);
+          }
+        </script> -->
+    </div>
+    <!-- header -->
+    <header class="globalHeader">
+      <div class="time">15.1515</div>
+      <form
+        class="searchFrom"
+        method="GET"
+        action="https://www.google.com/search?"
+      >
+        <input name="q" type="text" autocomplete="off" />
+        <button type="submit">検索</button>
+      </form>
+    </header>
+    <!-- main -->
+    <main class="globalMain">
+      <ul class="siteList">
+        <li>
+          <a href="https://www.rakuten.co.jp/">
+            <div class="site">
+              <div class="logo">
+                <img src="./img/rakuten.png" alt="" />
+              </div>
+              <div class="link">rukuten.com</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.hal.ac.jp/tokyo">
+            <div class="site">
+              <div class="logo">
+                <img src="./img/hal.png" alt="" />
+              </div>
+              <div class="link">haltokyo.com</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.amazon.co.jp/-/zh/ref=nav_logo">
+            <div class="site">
+              <div class="logo">
+                <img src="./img/amazong.png" alt="" />
+              </div>
+              <div class="link">amzong.com</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.yahoo.co.jp/">
+            <div class="site">
+              <div class="logo">
+                <img src="./img/yahoo.png" alt="" />
+              </div>
+              <div class="link">yahoo.com</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/home">
+            <div class="site">
+              <div class="logo">
+                <img src="./img/twitter.jpg" alt="" />
+              </div>
+              <div class="link">twitter.com</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/">
+            <div class="site">
+              <div class="logo">
+                <img src="./img/instagram.png" alt="" />
+              </div>
+              <div class="link">instagram</div>
+            </div>
+          </a>
+        </li>
+
+        <li class="last">
+          <div class="addButton">
+            <div class="iconWrapper">
+              <svg class="icon">
+                <use xlink:href="#icon-custom-add"></use>
+              </svg>
+            </div>
+            <div class="text">追加サイト</div>
+          </div>
+        </li>
+      </ul>
+    </main>
+
+    <script src="https://at.alicdn.com/t/font_2168517_nfphgj52gt.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
