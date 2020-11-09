@@ -39,7 +39,16 @@
           "./img/3.jpg",
           "./img/4.jpg",
         ];
-
+        // 图片预加载
+        var images = new Array();
+        function preload() {
+          for (i = 0; i < preload.arguments.length; i++) {
+            images[i] = new Image();
+            images[i].src = preload.arguments[i];
+          }
+        }
+        preload("./img/1.jpg", "./img/2.jpg", "./img/3.jpg");
+        // 图片预加载
         function changePic() {
           if (++i === imgArr.length) {
             i = 0;
@@ -101,7 +110,7 @@
     </div>
     <!-- header -->
     <header class="globalHeader">
-      <div class="time">15.1515</div>
+      <div class="clock">15.1515</div>
       <form
         class="searchFrom"
         method="GET"
