@@ -32,6 +32,7 @@ body {
   background-image: url(./img/4.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  transition: all 0.25s;
 }
 
 .globalHeader {
@@ -50,7 +51,6 @@ body {
   justify-content: center;
   width: 100px;
   margin-left: auto;
-
   height: 70px;
 }
 
