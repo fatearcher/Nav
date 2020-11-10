@@ -97,9 +97,11 @@ body {
   justify-content: center;
   align-items: center;
   padding-bottom: 20px;
+  transition: all 0.25s;
+  cursor: pointer;
 }
 
-.clock p:hover {
+.clock:hover {
   transform: scale3d(1.1, 1.1, 1.1);
 }
 
@@ -109,7 +111,6 @@ body {
   font-size: 35px;
   font-family: "Microsoft Yahei Light", "Microsoft Yahei";
   letter-spacing: 2px;
-  transition: all 0.25s;
 }
 
 /* .clock p::after {
@@ -202,10 +203,18 @@ body {
   margin-bottom: 10px;
 }
 
+.siteList > li :hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
 @media (min-width: 500px) {
   .siteList > li {
     margin-right: 25px;
   }
+}
+
+.siteList * {
+  transition: all 0.25s;
 }
 
 .siteList .site {
