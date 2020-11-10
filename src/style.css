@@ -26,6 +26,8 @@ img {
 
 /* style */
 body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
   min-width: 100%;
   min-height: 100vh;
   color: rgba(10, 10, 10);
