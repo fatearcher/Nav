@@ -6,7 +6,8 @@
       name="viewport"
       content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover"
     />
-    <title>前端导航</title>
+    <title>NAV</title>
+    <link rel="stylesheet" href="style.css" />
     <style type="text/css">
       .icon {
         width: 1em;
@@ -16,15 +17,18 @@
         overflow: hidden;
       }
     </style>
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- other -->
     <div class="cover" id="cover" style="opacity: 1"></div>
     <div id="btnBox">
       <div class="btnBox_iconWarp">
-        <svg class="btnBox_icon" onclick="changePic()">
-          <use xlink:href="#icon-tuxiang"></use>
-        </svg>
+        <img
+          onclick="changePic()"
+          class="btnBox_icon"
+          src="./img/picture.png"
+          alt=""
+        />
       </div>
       <div class="btnBox_iconWarp">
         <img
@@ -114,7 +118,42 @@
     </div>
     <!-- header -->
     <header class="globalHeader">
-      <div class="clock">15.1515</div>
+      <div class="clock"><p id="time"></p></div>
+      <script>
+        // get element
+        var time = document.querySelector("#time");
+        function up(time_el) {
+          // get time
+          let date = new Date();
+
+          let h = date.getHours();
+          let m = date.getMinutes();
+          let s = date.getSeconds();
+          // AM and PM
+          let day_night = "AM";
+
+          if (h > 12) {
+            h = h - 12;
+            day_night = "PM";
+          }
+          // (if min and sec) < 10 + 0
+          if (h < 10) {
+            h = "0" + h;
+          }
+          if (m < 10) {
+            m = "0" + m;
+          }
+          if (s < 10) {
+            s = "0" + s;
+          }
+          //assign to time
+          time.textContent = h + ":" + m + ":" + s + " " + "AM";
+        }
+
+        setInterval(() => {
+          up(time);
+        }, 1000);
+      </script>
       <form
         class="searchFrom"
         method="GET"
