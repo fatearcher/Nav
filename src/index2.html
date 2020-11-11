@@ -8,8 +8,22 @@
     />
     <title>NAV</title>
     <link rel="stylesheet" href="style.css" />
+    <script>
+      function reurl() {
+        url = location.href;
+        var times = url.split("?t=");
+        if (times[1] != 1) {
+          url += "?t=1";
+
+          self.location.replace(url);
+        }
+      }
+      window.onload = function () {
+        setTimeout("reurl()", 100); //0.1秒后刷新
+      };
+    </script>
   </head>
-  <body>
+  <body onload="function up(time_el)">
     <!-- other -->
 
     <div id="btnBox">
@@ -142,34 +156,6 @@
         }
 
         setInterval(() => {
-          var time = document.querySelector("#time");
-          function up(time_el) {
-            // get time
-            let date = new Date();
-
-            let h = date.getHours();
-            let m = date.getMinutes();
-            let s = date.getSeconds();
-            // AM and PM
-            let day_night = "AM";
-
-            if (h > 12) {
-              h = h - 12;
-              day_night = "PM";
-            }
-            // (if min and sec) < 10 + 0
-            if (h < 10) {
-              h = "0" + h;
-            }
-            if (m < 10) {
-              m = "0" + m;
-            }
-            if (s < 10) {
-              s = "0" + s;
-            }
-            //assign to time
-            time.textContent = h + ":" + m + ":" + s + " " + "AM";
-          }
           up(time);
         }, 1000);
       </script>
