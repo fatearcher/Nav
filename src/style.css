@@ -3,8 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   transition: all 0.25s;
-  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体",
-    "ヒラギノ角ゴ Pro W3", sans-serif;
 }
 
 *::before,
@@ -113,13 +111,17 @@ body {
 .clock p {
   color: rgb(255, 255, 255);
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
-  font-size: 35px;
+  font-size: 25px;
   letter-spacing: 2px;
 }
 
 @media (min-width: 500px) {
   .clock p {
     font-family: "Microsoft Yahei Light", "Microsoft Yahei";
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+    font-size: 35px;
+    letter-spacing: 2px;
   }
 }
 
