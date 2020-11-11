@@ -13,6 +13,7 @@
     <!-- other -->
 
     <div id="btnBox">
+      <div class="cover" id="cover"></div>
       <div class="btnBox_iconWarp">
         <img
           onclick="changePic()"
@@ -113,6 +114,7 @@
       <script>
         // get element
         var time = document.querySelector("#time");
+        up(time);
         function up(time_el) {
           // get time
           let date = new Date();
@@ -143,7 +145,7 @@
 
         setInterval(() => {
           up(time);
-        }, 0);
+        }, 1000);
       </script>
       <form
         class="searchFrom"

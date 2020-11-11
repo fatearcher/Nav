@@ -27,8 +27,6 @@ img {
 
 /* style */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
-    "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
   min-width: 100%;
   min-height: 100vh;
   color: rgba(10, 10, 10);
@@ -112,28 +110,21 @@ body {
   color: rgb(255, 255, 255);
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
   font-size: 35px;
-  font-family: "Microsoft Yahei Light", "Microsoft Yahei";
   letter-spacing: 2px;
 }
 
-/* .clock p::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  bottom: 20px;
-  transition: all 0.25s;
-  transform: scale3d(0, 1, 1);
-  transform-origin: 50% 0;
-} */
+@media (min-width: 500px) {
+  .clock p {
+    font-family: "Microsoft Yahei Light", "Microsoft Yahei";
+  }
+}
 
 .searchFrom {
   display: flex;
   justify-content: space-between;
 }
 
-/* 500px以下的样式不管 */
+/* 500px以下的样式不管 pc版本*/
 @media (min-width: 500px) {
   .searchFrom {
     max-width: 400px;
