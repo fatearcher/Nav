@@ -142,8 +142,36 @@
         }
 
         setInterval(() => {
+          var time = document.querySelector("#time");
+          function up(time_el) {
+            // get time
+            let date = new Date();
+
+            let h = date.getHours();
+            let m = date.getMinutes();
+            let s = date.getSeconds();
+            // AM and PM
+            let day_night = "AM";
+
+            if (h > 12) {
+              h = h - 12;
+              day_night = "PM";
+            }
+            // (if min and sec) < 10 + 0
+            if (h < 10) {
+              h = "0" + h;
+            }
+            if (m < 10) {
+              m = "0" + m;
+            }
+            if (s < 10) {
+              s = "0" + s;
+            }
+            //assign to time
+            time.textContent = h + ":" + m + ":" + s + " " + "AM";
+          }
           up(time);
-        }, 0);
+        }, 1000);
       </script>
       <form
         class="searchFrom"
