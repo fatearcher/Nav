@@ -8,22 +8,8 @@
     />
     <title>NAV</title>
     <link rel="stylesheet" href="style.css" />
-    <script>
-      function reurl() {
-        url = location.href;
-        var times = url.split("?t=");
-        if (times[1] != 1) {
-          url += "?t=1";
-
-          self.location.replace(url);
-        }
-      }
-      window.onload = function () {
-        setTimeout("reurl()", 100); //0.1秒后刷新
-      };
-    </script>
   </head>
-  <body onload="function up(time_el)">
+  <body>
     <!-- other -->
 
     <div id="btnBox">
@@ -244,7 +230,6 @@
         </li>
       </ul>
     </main>
-    <div class="cover" id="cover" style="opacity: 1"></div>
     <script src="https://at.alicdn.com/t/font_2168517_nfphgj52gt.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="main.js"></script>
