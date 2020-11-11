@@ -37,3 +37,11 @@ $(".addButton").on("click", () => {
 </a>
   </li>`).insertBefore($lastLi);
 });
+
+function inputFocus() {
+  let bg = document.body;
+  document.body.style.backdropFilter = "blur(14px)";
+}
+function inputFocusout() {
+  document.body.style.backdropFilter = "blur(0px)";
+}

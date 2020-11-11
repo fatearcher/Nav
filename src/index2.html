@@ -154,20 +154,11 @@
       >
         <input
           onfocus="inputFocus()"
-          onfocusout="inputFocusout()"
+          onblur="inputFocusout()"
           name="q"
           type="text"
           autocomplete="off"
         />
-        <script>
-          function inputFocus() {
-            let bg = document.body;
-            document.body.style.backdropFilter = "blur(10px)";
-          }
-          function inputFocusout() {
-            document.body.style.backdropFilter = "blur(0px)";
-          }
-        </script>
         <button type="submit">検索</button>
       </form>
     </header>
