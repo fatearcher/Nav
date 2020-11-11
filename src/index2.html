@@ -9,7 +9,7 @@
     <title>NAV</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body id="indexBody">
     <!-- other -->
 
     <div id="btnBox">
@@ -152,7 +152,22 @@
         method="GET"
         action="https://www.google.com/search?"
       >
-        <input name="q" type="text" autocomplete="off" />
+        <input
+          onfocus="inputFocus()"
+          onfocusout="inputFocusout()"
+          name="q"
+          type="text"
+          autocomplete="off"
+        />
+        <script>
+          function inputFocus() {
+            let bg = document.body;
+            document.body.style.backdropFilter = "blur(10px)";
+          }
+          function inputFocusout() {
+            document.body.style.backdropFilter = "blur(0px)";
+          }
+        </script>
         <button type="submit">検索</button>
       </form>
     </header>
