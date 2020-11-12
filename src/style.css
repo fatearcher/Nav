@@ -35,7 +35,6 @@ body {
   background-size: cover;
   transition: all 0.25s;
   background-position: center;
-  /* backdrop-filter: blur(10px); */
 }
 
 @media (min-width: 500px) {
@@ -110,7 +109,7 @@ body {
 
 .clock p {
   color: rgb(255, 255, 255);
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   font-size: 25px;
   letter-spacing: 2px;
 }
@@ -160,10 +159,8 @@ body {
   outline: none;
   /* border: 1px #ddd solid; */
   background: rgb(255, 255, 255, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
   border-radius: 5px;
-}
-
-input:focus {
 }
 
 .searchFrom > button {
@@ -175,6 +172,7 @@ input:focus {
   background: rgb(255, 255, 255, 0.3);
   color: black;
   outline: none;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
 }
 
 .globalMain {
