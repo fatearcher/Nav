@@ -13,6 +13,11 @@ const hashMap = [
   },
 ];
 
+//遍历
+hashMap.forEach((node) => {
+  const $li = $();
+});
+
 // $=juqery
 // 监听class .addbutton事件；
 // on "click" 点击 ，并赋予一个函数

@@ -125,9 +125,17 @@
           // AM and PM
           let day_night = "AM";
 
-          if (h > 12) {
-            h = h - 12;
+          // if (h > 12) {
+          //   h = h - 12;
+          //   day_night = "PM";
+          // }
+
+          if (h <= 12) {
+            day_night = "AM";
+          } else if (h > 12 && h < 24) {
             day_night = "PM";
+          } else if (H == 24) {
+            h = 0;
           }
           // (if min and sec) < 10 + 0
           if (h < 10) {
@@ -140,7 +148,7 @@
             s = "0" + s;
           }
           //assign to time
-          time.textContent = h + ":" + m + ":" + s + " " + "AM";
+          time.textContent = h + ":" + m + ":" + s + " " + day_night;
         }
 
         setInterval(() => {
