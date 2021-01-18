@@ -231,6 +231,7 @@ body {
   /* border: 1px #ddd solid; */
   border-radius: 5px;
   padding: 20px 0;
+  position: relative;
 }
 .siteList .site > .logo {
   /* border: 1px red solid; */
@@ -245,6 +246,22 @@ body {
   font-size: 14px;
   margin-top: 4px;
 }
+
+.siteList .site > .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  display: none;
+  cursor: default;
+  /* border: 1px red solid; */
+}
+
+.siteList .site:hover > .close {
+  display: block;
+}
+
 .siteList .addButton {
   width: 160px;
   /* border: 1px black solid; */
@@ -260,6 +277,7 @@ body {
 
 .siteList .addButton .text {
   margin-top: 4px;
+  font-size: 14px;
 }
 
 .iconWrapper {
